@@ -1,0 +1,11 @@
+kind: pipeline
+name: webgoat
+
+steps:
+  - name: code-analysis
+    image: aosapps/drone-sonar-plugin
+    settings:
+      sonar_host: http://35.188.205.135:9000/
+      sonar_token: ddcfe0e09800d294563d0f53f23c7beb2fbe438f
+    commands:
+      - sonar-scanner -Dsonar.projectKey=VulnApp -Dsonar.sources=. -Dsonar.projectName=VulnApp -Dsonar.projectVersion=1.0 -Dsonar.host.url=http://35.188.205.135:9000 -Dsonar.login=admin -Dsonar.password=admin
